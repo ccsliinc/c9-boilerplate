@@ -21,6 +21,7 @@ rm -rf project
 sudo sed -i 's/workspace/workspace\/public/g' /etc/apache2/sites-enabled/001-cloud9.conf
 
 mysql-ctl install
+Y
 phpmyadmin-ctl install
 
 npm install
