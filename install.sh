@@ -7,3 +7,17 @@ sudo mv /etc/apache2/envvars /etc/apache2/envvars.bak
 sudo apt-get remove libapache2-mod-php5 -y
 sudo apt-get install libapache2-mod-php7.0 -y
 sudo cp /etc/apache2/envvars.bak /etc/apache2/envvars
+
+composer global require 'laravel/installer'
+export PATH=~/.composer/vendor/bin:$PATH
+
+composer create-project laravel/laravel .
+
+sudo sed -i 's/workspace/workspace\/public/g' /etc/apache2/sites-enabled/001-cloud9.conf
+
+mysql-ctl install
+phpmyadmin-ctl install
+
+npm install
+npm rebuild node-sass
+
