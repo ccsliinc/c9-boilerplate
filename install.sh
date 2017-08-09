@@ -8,6 +8,8 @@ sudo apt-get remove libapache2-mod-php5 -y
 sudo apt-get install libapache2-mod-php7.0 -y
 sudo cp /etc/apache2/envvars.bak /etc/apache2/envvars
 
+rm hello-world.php php.ini README.md
+
 composer global require 'laravel/installer'
 export PATH=~/.composer/vendor/bin:$PATH
 
