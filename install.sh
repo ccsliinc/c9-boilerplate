@@ -11,7 +11,12 @@ sudo cp /etc/apache2/envvars.bak /etc/apache2/envvars
 composer global require 'laravel/installer'
 export PATH=~/.composer/vendor/bin:$PATH
 
-composer create-project laravel/laravel .
+composer create-project laravel/laravel project
+
+#laravel new project
+mv ./project/* ./
+mv ./project/.* ./
+rm -rf project
 
 sudo sed -i 's/workspace/workspace\/public/g' /etc/apache2/sites-enabled/001-cloud9.conf
 
